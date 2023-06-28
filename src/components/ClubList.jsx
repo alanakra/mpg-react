@@ -19,7 +19,7 @@ export default function ClubList() {
     return (
     <div>
         <h1 className="text-3xl text-center mb-4">Liste des clubs</h1>
-        <input type="text" list="select-club"/>
+        <input type="text" list="select-club" name="select-club"/>
         <datalist id="select-club">
             {Object.keys(clubs).map((clubId) => {
                 const club = clubs[clubId];
