@@ -16,6 +16,13 @@ export default function ClubList() {
     fetchClubs();
     }, []);
 
+    function submitClub(e) {
+        e.preventDefault();
+        const selectedIndex = e.target.selectedIndex;
+        const selectedOption = e.target.options[selectedIndex].id;
+        console.log(selectedOption);
+    }
+
     return (
     <div>
         <h1 className="text-3xl text-center mb-4">Liste des clubs</h1>
