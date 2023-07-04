@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function PlayerList() {
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [filteredPosition, setFilteredPosition] = useState("");
+    const [name, setName] = useState("");
     useEffect(() => {
         async function fetchPlayers() {
             const response = await axios.get(
@@ -15,8 +16,13 @@ export default function PlayerList() {
         }
         fetchPlayers();
     }, []);
+
     function handleChangePosition(e) {
         console.log(e.target.value)
+    }
+
+    function typePlayer(e) {
+        setName(e.target.value)
     }
 
     return (
@@ -31,6 +37,17 @@ export default function PlayerList() {
                 <option value="31">Milieu offensif - MO</option>
                 <option value="40">Attaquant - A</option>
             </select>
+            <div>
+                <label htmlFor="nameFilter" className="mr-4">Filtrer par nom : </label>
+                <input
+                type="text"
+                id="nameFilter"
+                name="nameFilter"
+                placeholder="Messi, Le Fée, David, Cherki"
+                onChange={typePlayer}
+                />
+            </div>
+            <h2 className="text-3xl my-5">Options for {name}</h2>
             <ul>
                 {filteredPlayers.map((player) => (
                     <li key={player.id}>{player.firstName} {player.lastName}</li>
