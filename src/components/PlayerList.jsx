@@ -5,6 +5,7 @@ export default function PlayerList() {
     const [filteredPlayers, setFilteredPlayers] = useState([]);
     const [filteredPosition, setFilteredPosition] = useState("");
     const [name, setName] = useState("");
+    const [players, setPlayers] = useState([]);
     useEffect(() => {
         async function fetchPlayers() {
             const response = await axios.get(
@@ -12,10 +13,15 @@ export default function PlayerList() {
             );
             const playersList = response.data.poolPlayers;
             console.log(playersList);
+            setPlayers(playersList);
             setFilteredPlayers(playersList);
         }
         fetchPlayers();
     }, []);
+
+    useEffect(() => {
+        filterPlayers();
+    }, [name, filteredPosition])
 
     function handleChangePosition(e) {
         setFilteredPosition(e.target.value);
@@ -24,6 +30,22 @@ export default function PlayerList() {
     function typePlayer(e) {
         setName(e.target.value);
     }
+
+    const filterPlayers = () => {
+        let filteredPlayers = players;
+    
+        if (name !== '') {
+          filteredPlayers = filteredPlayers.filter((player) =>
+            player.lastname.toLowerCase().includes(name.toLowerCase())
+          );
+        }
+    
+        if (filteredPosition !== '') {
+          filteredPlayers = filteredPlayers.filter((player) => player.ultraPosition.toString() === filteredPosition);
+        }
+    
+        setFilteredPlayers(filteredPlayers);
+    };
 
     return (
         <div>
