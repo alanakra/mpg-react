@@ -18,11 +18,11 @@ export default function PlayerList() {
     }, []);
 
     function handleChangePosition(e) {
-        console.log(e.target.value)
+        setFilteredPosition(e.target.value);
     }
 
     function typePlayer(e) {
-        setName(e.target.value)
+        setName(e.target.value);
     }
 
     return (
