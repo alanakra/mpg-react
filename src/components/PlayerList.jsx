@@ -68,7 +68,6 @@ export default function PlayerList() {
                 onChange={typePlayer}
                 />
             </div>
-            {/* <h2 className="text-3xl my-5">Options for {name}</h2> */}
             <ul>
                 {filteredPlayers.map((player) => (
                     <li key={player.id}>{player.firstName} {player.lastName}</li>
