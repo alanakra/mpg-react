@@ -12,7 +12,6 @@ export default function PlayerList() {
                 "https://api.mpg.football/api/data/championship-players-pool/1"
             );
             const playersList = response.data.poolPlayers;
-            console.log(playersList);
             setPlayers(playersList);
             setFilteredPlayers(playersList);
         }
