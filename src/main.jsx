@@ -4,10 +4,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import ClubList from './components/ClubList.jsx'
 import PlayerList from './components/PlayerList.jsx'
+import Home from './components/Home.jsx'
 import './index.css'
 const router = createBrowserRouter([
   {
-    path: "/"
+    path: "/",
+    element: <Home/>
   },
   {
     path: "/clubs",
