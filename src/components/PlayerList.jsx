@@ -36,7 +36,7 @@ export default function PlayerList() {
     
         if (name !== '') {
           filteredPlayers = filteredPlayers.filter((player) =>
-            player.lastname.toLowerCase().includes(name.toLowerCase())
+            player.lastName.toLowerCase().includes(name.toLowerCase())
           );
         }
     
@@ -69,7 +69,7 @@ export default function PlayerList() {
                 onChange={typePlayer}
                 />
             </div>
-            <h2 className="text-3xl my-5">Options for {name}</h2>
+            {/* <h2 className="text-3xl my-5">Options for {name}</h2> */}
             <ul>
                 {filteredPlayers.map((player) => (
                     <li key={player.id}>{player.firstName} {player.lastName}</li>
