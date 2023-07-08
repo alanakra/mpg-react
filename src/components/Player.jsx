@@ -50,11 +50,17 @@ export default function Player() {
     }, [id]);
     return (
         <div className="text-2xl">
-            <h1 className="text-3xl mb-2">Chiffres clés de {firstName} {lastName}</h1>
+            <h1 className="text-3xl mb-2">Chiffres clés de {firstName != 'null' ? firstName : ''} {lastName}</h1>
             <p>Nombre de match joués: {totalPlayedMatches}</p>
             <p>Nombre de match débutés: {totalStartedMatches}</p>
             <p>Nombre de buts: {totalGoals}</p>
             <p>Total de minutes jouées: {totalMinutesPlayed}</p>
+            <label htmlFor="playedMatches">Match joués</label>
+            <div className="flex">
+                <span>{totalPlayedMatches} Matchs</span>
+                <progress id="playedMatches" max="38" value={totalPlayedMatches}></progress>
+                <span>38 Matchs</span>
+            </div>
         </div>
     );
 }
