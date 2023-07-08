@@ -58,7 +58,7 @@ export default function Player() {
             <label htmlFor="playedMatches">Match joués</label>
             <div className="flex">
                 <span>{totalPlayedMatches} Matchs</span>
-                <progress id="playedMatches" max="38" value={totalPlayedMatches}></progress>
+                <progress className="mx-2" id="playedMatches" max="38" value={totalPlayedMatches}></progress>
                 <span>38 Matchs</span>
             </div>
         </div>
