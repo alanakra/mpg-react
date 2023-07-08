@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
+import { jsPDF } from "jspdf";
 
 export default function Player() {
     const { id } = useParams();
@@ -48,6 +49,20 @@ export default function Player() {
         }
         fetchPlayer();
     }, [id]);
+
+    function generatePDF() {
+        const doc = new jsPDF();
+        doc.text(`
+        Fiche détaillé de ${firstName != 'null' ? firstName : ''} ${lastName}
+        Nombre de match joués: ${totalPlayedMatches} / 38 (ratio de ${((totalPlayedMatches / 38) * 100).toFixed(0)}%)
+        Nombre de match débutés: ${totalStartedMatches} / ${totalPlayedMatches}
+        Nombre de buts: ${totalGoals}
+        Total de minutes jouées: ${totalMinutesPlayed}`, 
+        10, 10);
+
+        doc.save(`${id}-${lastName}.pdf`);
+    }
+
     return (
         <div className="text-2xl">
             <h1 className="text-3xl mb-2">Chiffres clés de {firstName != 'null' ? firstName : ''} {lastName}</h1>
@@ -61,6 +76,7 @@ export default function Player() {
                 <progress className="mx-2" id="playedMatches" max="38" value={totalPlayedMatches}></progress>
                 <span>38 Matchs</span>
             </div>
+            <button className="rounded-full bg-emerald-500 px-4 py-2 mt-4" onClick={generatePDF}>Generate PDF report</button>
         </div>
     );
 }
