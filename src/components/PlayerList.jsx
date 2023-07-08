@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function PlayerList() {
     const [filteredPlayers, setFilteredPlayers] = useState([]);
@@ -70,7 +71,11 @@ export default function PlayerList() {
             </div>
             <ul>
                 {filteredPlayers.map((player) => (
-                    <li key={player.id}>{player.firstName} {player.lastName}</li>
+                    <li key={player.id}>
+                        <Link className="hover:underline" to={`/players/${player.id}`}>
+                            {player.firstName} {player.lastName}
+                        </Link>
+                    </li>
                 ))}
             </ul>
         </div>
