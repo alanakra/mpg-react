@@ -51,8 +51,8 @@ export default function Player() {
     return (
         <div className="text-2xl">
             <h1 className="text-3xl mb-2">Chiffres clés de {firstName != 'null' ? firstName : ''} {lastName}</h1>
-            <p>Nombre de match joués: {totalPlayedMatches}</p>
-            <p>Nombre de match débutés: {totalStartedMatches}</p>
+            <p>Nombre de match joués: {totalPlayedMatches} / 38 (ratio de {((totalPlayedMatches / 38) * 100).toFixed(0)}%)</p>
+            <p>Nombre de match débutés: {totalStartedMatches} / {totalPlayedMatches}</p>
             <p>Nombre de buts: {totalGoals}</p>
             <p>Total de minutes jouées: {totalMinutesPlayed}</p>
             <label htmlFor="playedMatches">Match joués</label>
