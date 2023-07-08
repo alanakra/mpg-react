@@ -72,7 +72,7 @@ export default function PlayerList() {
             <ul>
                 {filteredPlayers.map((player) => (
                     <li key={player.id}>
-                        <Link className="hover:underline" to={`/players/${player.id}`}>
+                        <Link className="hover:underline" to={`/players/${player.id}?clubid=${player.clubId}&firstname=${player.firstName}&lastname=${player.lastName}`}>
                             {player.firstName} {player.lastName}
                         </Link>
                     </li>
