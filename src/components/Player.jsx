@@ -47,8 +47,7 @@ export default function Player() {
             }
         }
         fetchPlayer();
-    }, []);
-
+    }, [id]);
     return (
         <div className="text-2xl">
             <h1 className="text-3xl mb-2">Chiffres clés de {firstName} {lastName}</h1>
