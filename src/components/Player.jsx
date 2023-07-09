@@ -24,7 +24,6 @@ export default function Player() {
                     `https://api.mpg.football/api/data/championship-player-stats/${id}/2022`
                 );
                 const dataPlayer = response.data.championships['1'].total.stats;
-                console.log(dataPlayer);
                 const { 
                     totalPlayedMatches, 
                     totalStartedMatches, 
