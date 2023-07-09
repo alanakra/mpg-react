@@ -1,11 +1,8 @@
 export default function Navbar() {
     return (
-        <ul className="flex text-2xl justify-end gap-4 pr-8">
+        <ul className="flex text-5xl gap-4 pr-8 mb-4">
             <li>
-                <a href={'/'}>🐐</a>
-            </li>
-            <li>
-                <a href={'/clubs'}>Clubs</a>
+                <a href={'/'}>🐐 MPG</a>
             </li>
         </ul>
     );

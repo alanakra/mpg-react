@@ -4,15 +4,14 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import PlayerList from './components/PlayerList.jsx'
 import Player from './components/Player.jsx'
-import Home from './components/Home.jsx'
 import './index.css'
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home/>
+    path: '/',
+    element: <PlayerList/>
   },
   {
-    path: '/players',
+    path: '/players/',
     element: <PlayerList/>
   },
   {
