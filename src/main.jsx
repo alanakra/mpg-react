@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
-import ClubList from './components/ClubList.jsx'
 import PlayerList from './components/PlayerList.jsx'
 import Player from './components/Player.jsx'
 import Home from './components/Home.jsx'
@@ -11,10 +10,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home/>
-  },
-  {
-    path: "/clubs",
-    element: <ClubList/>
   },
   {
     path: '/players',

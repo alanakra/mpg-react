@@ -7,9 +7,6 @@ export default function Navbar() {
             <li>
                 <a href={'/clubs'}>Clubs</a>
             </li>
-            <li>
-                <a href={'/players'}>Players</a>
-            </li>
         </ul>
     );
 }
