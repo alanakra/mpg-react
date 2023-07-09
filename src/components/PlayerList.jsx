@@ -85,7 +85,7 @@ export default function PlayerList() {
             <div>
                 <label htmlFor="select-club" className="text-center mr-4 mb-4">Clubs : </label>
                 <select id="select-club" onChange={submitClub}>
-                    <option value="" id="">--Please choose an option--</option>
+                    <option value="" id="">--Merci de choisir un club de Ligue 1--</option>
                     {Object.keys(clubs).map((clubId) => {
                         const club = clubs[clubId];
                         return <option key={club.id} id={club.id}>{club.name["fr-FR"]}</option>;
