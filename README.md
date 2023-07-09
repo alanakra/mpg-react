@@ -9,12 +9,12 @@ The 3 endpoints :
 Returns the list of clubs:
 GET : 
 
-    ```https://api.mpg.football/api/data/championship-clubs```
+    https://api.mpg.football/api/data/championship-clubs
 
 Return the list of players
 GET 
 
-    ```https://api.mpg.football/api/data/championship-players-pool/1```
+    https://api.mpg.football/api/data/championship-players-pool/1
 
 To define player positions, use the ultraPosition id.
 
@@ -28,4 +28,4 @@ Attacker - A : 40
 Show details of a player
 GET
 
-    ```https://api.mpg.football/api/data/championship-player-stats/mpg_championship_player_100632/2022```
+    https://api.mpg.football/api/data/championship-player-stats/mpg_championship_player_100632/2022
