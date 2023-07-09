@@ -76,7 +76,7 @@ export default function Player() {
                 <progress className="mx-2" id="playedMatches" max="38" value={totalPlayedMatches}></progress>
                 <span>38 Matchs</span>
             </div>
-            <button className="rounded-full bg-emerald-500 px-4 py-2 mt-4" onClick={generatePDF}>Generate PDF report</button>
+            <button className="rounded-full bg-emerald-500 px-4 py-2 mt-4" onClick={generatePDF}>Exporter en PDF</button>
         </div>
     );
 }
