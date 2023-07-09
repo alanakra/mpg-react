@@ -6,7 +6,6 @@ import { jsPDF } from "jspdf";
 export default function Player() {
     const { id } = useParams();
     const [searchParams] = useSearchParams();
-    const clubId = searchParams.get('clubid');
     const firstName = searchParams.get('firstname');
     const lastName = searchParams.get('lastname');
     const [totalPlayedMatches, setTotalPlayedMatches] = useState('');
