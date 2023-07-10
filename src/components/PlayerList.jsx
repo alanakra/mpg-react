@@ -13,7 +13,7 @@ export default function PlayerList() {
     useEffect(() => {
         async function fetchClubs() {
         const response = await axios.get(
-            "https://api.mpg.football/api/data/championship-clubs"
+            "https://gist.githubusercontent.com/alanakra/57f0a8eda06470c03203728b8a8c4741/raw/c890228da9e7a21ddb266e2ae7dda1658662a548/clubs-ligue1.json"
         );
         const championshipClubs = response.data.championshipClubs;
         setClubs(championshipClubs);
