@@ -9,7 +9,7 @@ The 3 endpoints :
 Returns the list of clubs:
 GET : 
 
-    https://api.mpg.football/api/data/championship-clubs
+    https://gist.githubusercontent.com/alanakra/57f0a8eda06470c03203728b8a8c4741/raw/c890228da9e7a21ddb266e2ae7dda1658662a548/clubs-ligue1.json
 
 Return the list of players
 GET 
@@ -20,7 +20,7 @@ To define player positions, use the ultraPosition id.
 
 Goalkeeper - L: 10
 Defender - D: 20
-Lateral - L: 21
+Full Back - L: 21
 Defensive midfielder - MD: 30
 Attacking midfielder - MO: 31
 Attacker - A : 40
