@@ -17,7 +17,6 @@ export default function PlayerList() {
         );
         const championshipClubs = response.data.championshipClubs;
         setClubs(championshipClubs);
-        console.log(championshipClubs);
     }
 
     fetchClubs();
@@ -31,7 +30,6 @@ export default function PlayerList() {
             const playersList = response.data.poolPlayers;
             setPlayers(playersList);
             setFilteredPlayers(playersList);
-            console.log(playersList);
         }
         fetchPlayers();
     }, []);
@@ -44,7 +42,6 @@ export default function PlayerList() {
         e.preventDefault();
         const selectedIndex = e.target.selectedIndex;
         const selectedOption = e.target.options[selectedIndex].id;
-        console.log(selectedOption);
         setSelectedClub(selectedOption);
     }
 
@@ -57,7 +54,6 @@ export default function PlayerList() {
     }
 
     const filterPlayers = () => {
-        console.log(clubs);
         let filteredPlayers = players;
 
         if (selectedClub !== '') {
