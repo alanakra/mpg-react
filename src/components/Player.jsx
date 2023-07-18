@@ -8,14 +8,10 @@ export default function Player() {
     const [searchParams] = useSearchParams();
     const firstName = searchParams.get('firstname');
     const lastName = searchParams.get('lastname');
-    const [totalPlayedMatches, setTotalPlayedMatches] = useState('');
-    const [totalStartedMatches, setTotalStartedMatches] = useState('');
-    const [totalGoals, setTotalGoals] = useState('');
-    const [totalMinutesPlayed, setTotalMinutesPlayed] = useState('');
-    const [totalYellowCard, setTotalYellowCard] = useState('');
-    const [totalRedCard, setTotalRedCard] = useState('');
-    const [totalCleanSheet, setTotalCleanSheet] = useState('');
-
+    const [totalPlayedMatches, setTotalPlayedMatches] = useState(0);
+    const [totalStartedMatches, setTotalStartedMatches] = useState(0);
+    const [totalGoals, setTotalGoals] = useState(0);
+    const [totalMinutesPlayed, setTotalMinutesPlayed] = useState(0);
     useEffect(() => {
         async function fetchPlayer() {
             try {
@@ -28,18 +24,12 @@ export default function Player() {
                     totalPlayedMatches, 
                     totalStartedMatches, 
                     totalGoals,
-                    totalMinutesPlayed,
-                    totalYellowCard,
-                    totalRedCard,
-                    totalCleanSheet} = dataPlayer;
+                    totalMinutesPlayed} = dataPlayer;
                 setTotalPlayedMatches(totalPlayedMatches);
                 setTotalStartedMatches(totalStartedMatches);
                 setTotalGoals(totalGoals);
                 setTotalMinutesPlayed(totalMinutesPlayed);
                 setTotalGoals(totalGoals);
-                setTotalYellowCard(totalYellowCard);
-                setTotalRedCard(totalRedCard);
-                setTotalCleanSheet(totalCleanSheet);
 
 
             } catch (error) {
